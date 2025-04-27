@@ -11,7 +11,7 @@ Prerequisites
 
 Go 1.16 or higher
 An API key from OpenWeatherMap
-Sign up for a free account to obtain a key (free tier available).
+
 
 
 
@@ -19,7 +19,6 @@ Installation
 
 Clone or download the project.
 Navigate to the project directory.
-Replace YOUR_API_KEY in weather.go with your OpenWeatherMap API key.
 Run the program:go run weather.go
 
 
