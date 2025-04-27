@@ -37,29 +37,29 @@ Endpoints
 - Payload: JSON with url field.
 - Example:curl -X POST -H "Content-Type: application/json" -d '{"url":"https://www.example.com"}' http://localhost:8080/shorten
 
-Windows CMD:
-- curl -X POST -H "Content-Type: application/json" -d "{\"url\":\"https://www.example.com\"}" http://localhost:8080/shorten
-
+- Windows CMD:
+```bash 
+curl -X POST -H "Content-Type: application/json" -d "{\"url\":\"https://www.example.com\"}" http://localhost:8080/shorten
+```
 - Response:{"short_url":"http://localhost:8080/abc123"}
 
+---
 
+- GET /{short_key}
 
+- Redirects to the full URL.
+- Example:curl -L http://localhost:8080/abc123
 
-GET /{short_key}
+- Response: Redirects to https://www.example.com.
+  
+---
 
-Redirects to the full URL.
-Example:curl -L http://localhost:8080/abc123
+## File Structure
 
-Response: Redirects to https://www.example.com.
+- urlshortener.go: Main source code
+- README.md: This file
 
-
-
-File Structure
-
-urlshortener.go: Main source code
-README.md: This file
-
-Notes
+## Notes
 
 URLs are stored in memory and reset when the server restarts. For persistence, you could integrate BoltDB.
 Short keys are 6-character alphanumeric strings, randomly generated.
